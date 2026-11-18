@@ -1,0 +1,86 @@
+<!-- templates - Developed by acidvegas in HTML (https://github.com/acidvegas) -->
+<!-- index.html -->
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DIY Omi PCB</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<header>
+		<h1>DIY Omi PCB <span class="rev">rev 1</span></h1>
+		<p>{{ s.size }} · {{ s.layers }} · {{ s.thickness }} · {{ s.parts_top }} parts on top, solder pads on the bottom. Tap an image to enlarge.</p>
+	</header>
+
+	<section class="stats">
+		<div><b>{{ s.size }}</b><span>board (quarter: Ø24.26 mm, Omi case: Ø25.5 mm)</span></div>
+		<div><b>${{ '%.2f' % s.cost_per_board }}</b><span>est. per board, 2 built (Omi: $129)</span></div>
+		<div><b>{{ s.drc_errors }}</b><span>DRC errors</span></div>
+		<div><b>{{ s.unrouted }}</b><span>unrouted connections</span></div>
+	</section>
+
+	<h2>Size</h2>
+	<figure class="compare"><a href="/renders/compare.png"><img src="/renders/compare.png" alt="board next to a US quarter, to scale"></a><figcaption>To scale: the board next to a US quarter</figcaption></figure>
+
+	<h2>3D (drag to rotate, scroll to zoom)</h2>
+	<iframe class="frame3d" src="/3d" title="3D view"></iframe>
+	<p class="note"><a href="/3d" style="color: var(--accent)">Open full screen</a>. Concept case: every part is on the board's inner side, so the blank face sits flat against the case front. The 2 mics listen through holes in the board straight out of the front, and the RGB LED shines out through a slot in the board, so no light pipe is needed. The USB-C port opens through the case side wall. The 150 mAh round cell and the coin motor sit behind the parts. Parts without a vendor 3D model are drawn as simple blocks.</p>
+
+	<h2>Board</h2>
+	<div class="grid3">
+		<figure><a href="/renders/top.png"><img src="/renders/top.png" alt="top render"></a><figcaption>Top (antenna edge up)</figcaption></figure>
+		<figure><a href="/renders/bottom.png"><img src="/renders/bottom.png" alt="bottom render"></a><figcaption>Bottom: magnetic charging pads (GND, D+, D−, 5V), battery B+/B−, motor M+/M−, SWD pads</figcaption></figure>
+		<figure><a href="/renders/iso.png"><img src="/renders/iso.png" alt="iso render"></a><figcaption>3D view (custom parts have no 3D model)</figcaption></figure>
+	</div>
+
+	<h2>Copper layers</h2>
+	<div class="grid4">
+		{% for n, t in [('copper_top', 'L1 top'), ('copper_in2', 'L3 signal'), ('copper_in3', 'L4 signal'), ('copper_bottom', 'L6 bottom')] %}
+		<figure class="layer"><a href="/renders/{{ n }}.svg"><img src="/renders/{{ n }}.svg" alt="{{ t }}"></a><figcaption>{{ t }}</figcaption></figure>
+		{% endfor %}
+	</div>
+	<p class="note">L2 and L5 are solid ground planes. Nothing copper sits in the 4.2 mm strip along the top edge, because the ISP1807 antenna needs it clear.</p>
+
+	<h2>Schematic</h2>
+	<figure class="wide"><a href="/renders/omi.svg"><img src="/renders/omi.svg" alt="schematic"></a></figure>
+
+	<h2>Parts (JLCPCB BOM)</h2>
+	<div class="tbl">
+	<table>
+		<thead><tr><th>Part</th><th>Refs</th><th>LCSC</th><th>Unit $</th><th>Stock</th></tr></thead>
+		<tbody>
+		{% for row in s.bom %}
+		<tr class="{{ 'warn' if row.warn else '' }}"><td>{{ row.value }}</td><td>{{ row.refs }}</td><td>{{ row.lcsc }}</td><td>{{ '%.3f' % row.price if row.price is not none else '?' }}</td><td>{{ row.stock }}</td></tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	</div>
+
+	<h2>Cost estimate (2 assembled of 5)</h2>
+	<div class="tbl">
+	<table>
+		<tbody>
+		{% for k, v in s.cost_lines %}
+		<tr><td>{{ k }}</td><td class="num">{{ v }}</td></tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	</div>
+
+	<h2>Before ordering</h2>
+	<ul class="todo">
+		{% for t in s.todo %}<li>{{ t }}</li>{% endfor %}
+	</ul>
+
+	<h2>Files</h2>
+	<p class="files">
+		<a href="/files/omi-gerbers.zip">omi-gerbers.zip</a>
+		<a href="/files/omi-bom.csv">omi-bom.csv</a>
+		<a href="/files/omi-cpl.csv">omi-cpl.csv</a>
+	</p>
+	<p class="note">KiCad project: {{ s.project_path }}</p>
+</body>
+</html>

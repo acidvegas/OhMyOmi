@@ -1,0 +1,131 @@
+<!-- templates - Developed by acidvegas in HTML (https://github.com/acidvegas) -->
+<!-- index.html -->
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DIY Omi Wiring</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<header>
+		<h1>DIY Omi wiring</h1>
+		<p>XIAO nRF52840 Sense · micro SD module · passive buzzer · EEMB 250mAh LiPo. Board drawn top-down, USB-C up. Hover a wire or a table row to highlight it.</p>
+	</header>
+
+	<div class="diagram">
+		<svg viewBox="0 0 1000 680" role="img" aria-label="Wiring diagram">
+			<!-- XIAO board -->
+			<rect class="board" x="400" y="110" width="160" height="350" rx="14"/>
+			<rect class="usb" x="450" y="96" width="60" height="26" rx="6"/>
+			<text class="tiny" x="480" y="90" text-anchor="middle">USB-C</text>
+			<text class="title" x="480" y="250" text-anchor="middle">XIAO</text>
+			<text class="title" x="480" y="272" text-anchor="middle">nRF52840</text>
+			<text class="title" x="480" y="294" text-anchor="middle">Sense</text>
+			<text class="tiny" x="480" y="330" text-anchor="middle">onboard PDM mic</text>
+			<text class="tiny" x="480" y="345" text-anchor="middle">(no wiring)</text>
+
+			<!-- XIAO left pins -->
+			<g class="pins">
+				<circle cx="400" cy="160" r="7"/><text x="414" y="165">D0</text>
+				<circle cx="400" cy="204" r="7"/><text x="414" y="209">D1</text>
+				<circle cx="400" cy="248" r="7"/><text x="414" y="253">D2</text>
+				<circle cx="400" cy="292" r="7"/><text x="414" y="297">D3</text>
+				<circle cx="400" cy="336" r="7"/><text x="414" y="341">D4</text>
+				<circle cx="400" cy="380" r="7"/><text x="414" y="385">D5</text>
+				<circle cx="400" cy="424" r="7"/><text x="414" y="429">D6</text>
+			</g>
+			<!-- XIAO right pins -->
+			<g class="pins">
+				<circle cx="560" cy="160" r="7"/><text x="546" y="165" text-anchor="end">5V</text>
+				<circle cx="560" cy="204" r="7"/><text x="546" y="209" text-anchor="end">GND</text>
+				<circle cx="560" cy="248" r="7"/><text x="546" y="253" text-anchor="end">3V3</text>
+				<circle cx="560" cy="292" r="7"/><text x="546" y="297" text-anchor="end">D10</text>
+				<circle cx="560" cy="336" r="7"/><text x="546" y="341" text-anchor="end">D9</text>
+				<circle cx="560" cy="380" r="7"/><text x="546" y="385" text-anchor="end">D8</text>
+				<circle cx="560" cy="424" r="7"/><text x="546" y="429" text-anchor="end">D7</text>
+			</g>
+			<text class="free" x="392" y="341" text-anchor="end">free</text>
+			<text class="free" x="392" y="385" text-anchor="end">free</text>
+			<text class="free" x="392" y="429" text-anchor="end">free</text>
+			<text class="free" x="392" y="209" text-anchor="end">free</text>
+			<text class="free" x="568" y="165">unused</text>
+			<text class="free" x="568" y="429">free</text>
+
+			<!-- Underside battery pads -->
+			<rect class="underside" x="420" y="478" width="120" height="46" rx="8"/>
+			<text class="tiny" x="480" y="474" text-anchor="middle">underside pads (flip board)</text>
+			<circle class="pad" cx="455" cy="501" r="8"/><text class="tiny" x="455" y="540" text-anchor="middle">BAT+</text>
+			<circle class="pad" cx="505" cy="501" r="8"/><text class="tiny" x="505" y="540" text-anchor="middle">BAT−</text>
+
+			<!-- SD module -->
+			<rect class="module" x="760" y="220" width="170" height="280" rx="10"/>
+			<rect class="slot" x="810" y="300" width="100" height="170" rx="6"/>
+			<text class="title" x="855" y="560" text-anchor="middle">micro SD module</text>
+			<text class="tiny" x="855" y="578" text-anchor="middle">3.3V, no regulator</text>
+			<text class="tiny" x="855" y="593" text-anchor="middle">pin order top → bottom as printed</text>
+			<g class="pins">
+				<circle cx="760" cy="248" r="7"/><text x="774" y="253">3V3</text>
+				<circle cx="760" cy="292" r="7"/><text x="774" y="297">CS</text>
+				<circle cx="760" cy="336" r="7"/><text x="774" y="341">MOSI</text>
+				<circle cx="760" cy="380" r="7"/><text x="774" y="385">CLK</text>
+				<circle cx="760" cy="424" r="7"/><text x="774" y="429">MISO</text>
+				<circle cx="760" cy="468" r="7"/><text x="774" y="473">GND</text>
+			</g>
+
+			<!-- Buzzer -->
+			<circle class="buzzer" cx="150" cy="270" r="60"/>
+			<circle class="buzzer-hole" cx="150" cy="270" r="8"/>
+			<text class="title" x="150" y="360" text-anchor="middle">passive buzzer</text>
+			<text class="tiny" x="150" y="377" text-anchor="middle">exposed-PCB one (~42Ω)</text>
+			<g class="pins">
+				<circle cx="230" cy="248" r="7"/><text x="244" y="240">+</text>
+				<circle cx="230" cy="292" r="7"/><text x="244" y="314">−</text>
+			</g>
+
+			<!-- Battery -->
+			<rect class="battery" x="380" y="590" width="200" height="60" rx="8"/>
+			<text class="title" x="480" y="618" text-anchor="middle">EEMB LiPo 3.7V 250mAh</text>
+			<text class="tiny" x="480" y="636" text-anchor="middle">cut JST off · solder to pads</text>
+
+			<!-- Wires -->
+			<g class="wires">
+				<path data-wire="gnd"  class="w gnd"  d="M560 204 H600 V100 H955 V530 H740 V468 H760"/>
+				<path data-wire="v33"  class="w v33"  d="M560 248 H760"/>
+				<path data-wire="mosi" class="w mosi" d="M560 292 H650 V336 H760"/>
+				<path data-wire="miso" class="w miso" d="M560 336 H620 V424 H760"/>
+				<path data-wire="sck"  class="w sck"  d="M560 380 H760"/>
+				<path data-wire="cs"   class="w cs"   d="M400 160 H370 V70 H730 V292 H760"/>
+				<path data-wire="bzp"  class="w bzp"  d="M230 248 H400"/>
+				<path data-wire="bzn"  class="w bzn"  d="M230 292 H400"/>
+				<path data-wire="batp" class="w batp" d="M455 501 V590"/>
+				<path data-wire="batn" class="w batn" d="M505 501 V590"/>
+			</g>
+		</svg>
+	</div>
+
+	<table>
+		<thead>
+			<tr><th></th><th>From</th><th>To (XIAO)</th><th>nRF pin</th><th>Notes</th></tr>
+		</thead>
+		<tbody>
+			<tr data-wire="batp"><td><span class="sw batp"></span></td><td>Battery red (+)</td><td>BAT+ pad (underside)</td><td>–</td><td>Cut the JST off one wire at a time so they never touch</td></tr>
+			<tr data-wire="batn"><td><span class="sw batn"></span></td><td>Battery black (−)</td><td>BAT− pad (underside)</td><td>–</td><td>Charges at ~50mA by default (0.2C)</td></tr>
+			<tr data-wire="v33"><td><span class="sw v33"></span></td><td>SD 3V3</td><td>3V3</td><td>–</td><td>Module has no regulator</td></tr>
+			<tr data-wire="gnd"><td><span class="sw gnd"></span></td><td>SD GND</td><td>GND</td><td>–</td><td></td></tr>
+			<tr data-wire="sck"><td><span class="sw sck"></span></td><td>SD CLK</td><td>D8</td><td>P1.13</td><td>Default SPI clock</td></tr>
+			<tr data-wire="miso"><td><span class="sw miso"></span></td><td>SD MISO</td><td>D9</td><td>P1.14</td><td>Default SPI MISO</td></tr>
+			<tr data-wire="mosi"><td><span class="sw mosi"></span></td><td>SD MOSI</td><td>D10</td><td>P1.15</td><td>Default SPI MOSI</td></tr>
+			<tr data-wire="cs"><td><span class="sw cs"></span></td><td>SD CS</td><td>D0</td><td>P0.02</td><td>Same CS pin as Omi's DevKit2 firmware</td></tr>
+			<tr data-wire="bzp"><td><span class="sw bzp"></span></td><td>Buzzer + leg</td><td>D2</td><td>P0.28</td><td>PWM, high drive (H0H1)</td></tr>
+			<tr data-wire="bzn"><td><span class="sw bzn"></span></td><td>Buzzer − leg</td><td>D3</td><td>P0.29</td><td>Same PWM, inverted. Quiet, and over Nordic's ~15mA total</td></tr>
+		</tbody>
+	</table>
+
+	<p class="foot">Free pins: D1, D4, D5, D6, D7. Never drive P0.14 HIGH while charging (it can damage battery-sense pin P0.31).</p>
+
+	<script src="{{ url_for('static', filename='utils.js') }}"></script>
+</body>
+</html>
