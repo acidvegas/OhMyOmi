@@ -1,0 +1,263 @@
+{
+ "size": "\u00d826 mm round",
+ "layers": "6 layers",
+ "thickness": "0.8 mm",
+ "parts_top": 42,
+ "drc_errors": 0,
+ "unrouted": 0,
+ "bom": [
+  {
+   "value": "ISP1807-LR-RS",
+   "refs": "U1",
+   "lcsc": "C5264268",
+   "price": 12.2344,
+   "stock": 0,
+   "warn": true
+  },
+  {
+   "value": "TYPE-C-31-M-12",
+   "refs": "J1",
+   "lcsc": "C165948",
+   "price": 0.1871,
+   "stock": 507026,
+   "warn": false
+  },
+  {
+   "value": "5.1k",
+   "refs": "R1,R2",
+   "lcsc": "C25905",
+   "price": 0.0014,
+   "stock": 4376214,
+   "warn": false
+  },
+  {
+   "value": "USBLC6-2P6",
+   "refs": "U6",
+   "lcsc": "C15999",
+   "price": 0.2839,
+   "stock": 48627,
+   "warn": false
+  },
+  {
+   "value": "MCP73832T-2ACI/OT",
+   "refs": "U4",
+   "lcsc": "C38066",
+   "price": 0.9598,
+   "stock": 8028,
+   "warn": false
+  },
+  {
+   "value": "100k",
+   "refs": "R17,R18,R13",
+   "lcsc": "C25741",
+   "price": 0.0009,
+   "stock": 8679908,
+   "warn": false
+  },
+  {
+   "value": "15k",
+   "refs": "R3",
+   "lcsc": "C25756",
+   "price": 0.0011,
+   "stock": 2001809,
+   "warn": false
+  },
+  {
+   "value": "10uF",
+   "refs": "C1",
+   "lcsc": "C19702",
+   "price": 0.0168,
+   "stock": 10681807,
+   "warn": false
+  },
+  {
+   "value": "10uF",
+   "refs": "C2",
+   "lcsc": "C15525",
+   "price": 0.0197,
+   "stock": 7721214,
+   "warn": false
+  },
+  {
+   "value": "TPS7A0233PDQNR",
+   "refs": "U5",
+   "lcsc": "C2860046",
+   "price": 0.5749,
+   "stock": 3000,
+   "warn": false
+  },
+  {
+   "value": "1uF",
+   "refs": "C3,C4,C9,C11",
+   "lcsc": "C52923",
+   "price": 0.0055,
+   "stock": 9077599,
+   "warn": false
+  },
+  {
+   "value": "4.7uF",
+   "refs": "C5",
+   "lcsc": "C23733",
+   "price": 0.0113,
+   "stock": 1046663,
+   "warn": false
+  },
+  {
+   "value": "1M",
+   "refs": "R4,R5",
+   "lcsc": "C26083",
+   "price": 0.0011,
+   "stock": 2837593,
+   "warn": false
+  },
+  {
+   "value": "100nF",
+   "refs": "C10,C7,C8",
+   "lcsc": "C1525",
+   "price": 0.0024,
+   "stock": 35206576,
+   "warn": false
+  },
+  {
+   "value": "MKDV4GCL-ABB",
+   "refs": "U2",
+   "lcsc": "C7500178",
+   "price": 14.2079,
+   "stock": 4447,
+   "warn": false
+  },
+  {
+   "value": "DMG1013T-7",
+   "refs": "Q2",
+   "lcsc": "C96676",
+   "price": 0.052,
+   "stock": 22459,
+   "warn": false
+  },
+  {
+   "value": "2.2uF",
+   "refs": "C6",
+   "lcsc": "C12530",
+   "price": 0.0051,
+   "stock": 3139949,
+   "warn": false
+  },
+  {
+   "value": "47k",
+   "refs": "R6,R7,R8,R9,R10",
+   "lcsc": "C25792",
+   "price": 0.0019,
+   "stock": 5438234,
+   "warn": false
+  },
+  {
+   "value": "LIS2DW12TR",
+   "refs": "U3",
+   "lcsc": "C189624",
+   "price": 0.9041,
+   "stock": 4008,
+   "warn": false
+  },
+  {
+   "value": "10k",
+   "refs": "R11,R12",
+   "lcsc": "C25744",
+   "price": 0.0015,
+   "stock": 36573457,
+   "warn": false
+  },
+  {
+   "value": "IM73D122V01",
+   "refs": "MK1,MK2",
+   "lcsc": "C5563886",
+   "price": 2.6893,
+   "stock": 2498,
+   "warn": false
+  },
+  {
+   "value": "DMG1012T-7",
+   "refs": "Q1",
+   "lcsc": "C20512",
+   "price": 0.0898,
+   "stock": 26008,
+   "warn": false
+  },
+  {
+   "value": "RB521S30T1G",
+   "refs": "D1",
+   "lcsc": "C145179",
+   "price": 0.0641,
+   "stock": 25713,
+   "warn": false
+  },
+  {
+   "value": "MHT151RGBCT",
+   "refs": "LED1",
+   "lcsc": "C409782",
+   "price": 0.136,
+   "stock": 46112,
+   "warn": false
+  },
+  {
+   "value": "1k",
+   "refs": "R14",
+   "lcsc": "C11702",
+   "price": 0.0013,
+   "stock": 30284462,
+   "warn": false
+  },
+  {
+   "value": "330",
+   "refs": "R15,R16",
+   "lcsc": "C25104",
+   "price": 0.0011,
+   "stock": 2214729,
+   "warn": false
+  }
+ ],
+ "cost_per_board": 59.870099999999994,
+ "cost_lines": [
+  [
+   "JLC parts, 2 boards",
+   "$45.89"
+  ],
+  [
+   "ISP1807 \u00d72 via Global Sourcing (~$13.65 ea)",
+   "$27.30"
+  ],
+  [
+   "Extended-part loading fees (12 \u00d7 $3.07)",
+   "$36.84"
+  ],
+  [
+   "Economic PCBA setup + stencil",
+   "$9.71"
+  ],
+  [
+   "Total before PCB fab and shipping",
+   "$119.74"
+  ],
+  [
+   "6-layer PCB fab",
+   "quote on order (6-layer 0.8 mm, 5 pcs)"
+  ],
+  [
+   "Battery and vibration motor (not on board)",
+   "separate"
+  ]
+ ],
+ "todo": [
+  "ISP1807-LR-RS is out of stock at JLC, DigiKey and Mouser right now (500 due at DigiKey ~16 Dec 2026, 10k at Mouser ~14 Dec). Order it through JLC Global Sourcing once it lands.",
+  "In JLC's placement preview, check every part's rotation and pin 1 (especially U1, U2, U3, U4, U5, U6, MK1, MK2, LED1, Q1, Q2, D1). KiCad and JLC disagree on zero-rotation for some packages, and I did not apply any corrections.",
+  "PCB order: 6 layers, 0.8 mm, ENIG, via-in-pad filled and capped (6-layer default), tented vias, min via 0.2/0.4 mm.",
+  "Battery: a CP1654 A3 Li-ion cell (\u00d816 \u00d7 5.4 mm, ~120 mAh, 4.2 V) with wire leads and a protection circuit, e.g. amazon.com/dp/B0F8BLXYPJ. It sits under the board, offset away from the antenna; solder its red lead to B+ and black to B\u2212. Charge current is 66 mA (R3 = 15k), about 0.5C.",
+  "Charging/USB: USB-C socket (HRO TYPE-C-31-M-12, C165948) at the bottom edge, with 5.1k CC pull-downs so any USB-C charger or computer supplies 5V. The case needs a port opening in its side wall there.",
+  "Motor: a 5 \u00d7 2.5 mm 3 V coin vibration motor (like Omi's), soldered to M+ / M\u2212.",
+  "First flash: touch a programmer (J-Link, or a Pico running debugprobe) to the IO/CK/3V/G pads, load an nRF52840 UF2 bootloader, then use USB-C.",
+  "Front face: all parts are on the inner side; the blank side of the board sits flat against the inside of the case front. Each mic listens through a 0.8 mm hole in the board: put a 1.0-1.2 mm hole in the case front directly over each (15.4 mm apart) and seal board to case around it (a thin adhesive gasket ring or a dab of soft sealant). The RGB LED shines out through a 1.8 \u00d7 1.7 mm slot in the board: give the case a matching hole or a thin (\u22640.5 mm) translucent spot there. The 4 SWD test pads are also on the front face, reachable before the case goes on.",
+  "Assembly: one-sided Economic PCBA (every machine-placed part is on the inner side). Battery and motor wires solder to the B+/B\u2212/M+/M\u2212 pads on the inner side; the battery sits above the parts, offset away from the antenna.",
+  "Firmware settings the hardware relies on: PDM clock 1.280 MHz with ratio 80 (16 kHz), stereo, MK1 = falling-edge channel, MK2 = rising; LED pins P0.13/P0.17/P0.14 in high-drive mode; drive P0.30 low to power the SD NAND (and float its SPI pins before turning it off); read charge status on P0.31 (low = charging); battery ADC on AIN4 with TACQ = 40 us; enable the nRF DC/DC (DCDCEN, inductors are inside the module); PWM the motor at ~70% duty from a full cell and keep it at or below 10 kHz; stop recording below ~3.4 V.",
+  "Rev 1 is unverified: the RF performance, mic land pattern orientation and SD NAND footprint come from datasheets and have not been tested on hardware."
+ ],
+ "project_path": "/home/acidvegas/dev/projects/embedded/omi/pcb"
+}

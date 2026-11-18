@@ -1,0 +1,77 @@
+/* static - Developed by acidvegas in CSS (https://github.com/acidvegas) */
+/* style.css */
+
+:root {
+	--bg: #0f1115;
+	--panel: #171a21;
+	--line: #2a2f3a;
+	--text: #e6e8ec;
+	--muted: #8b93a3;
+	--board: #1d4d2f;
+	--module: #1c3a6b;
+	color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	padding: 24px 16px 48px;
+	background: var(--bg);
+	color: var(--text);
+	font: 14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+header, .diagram, table, .foot { max-width: 1000px; margin-inline: auto; }
+h1 { margin: 0 0 4px; font-size: 22px; }
+header p { margin: 0 0 16px; color: var(--muted); }
+
+.diagram { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; }
+svg { display: block; width: 100%; min-width: 640px; height: auto; }
+
+.board      { fill: var(--board); stroke: #2f7a4a; stroke-width: 2; }
+.usb        { fill: #9aa3b2; }
+.module     { fill: var(--module); stroke: #2f5ea8; stroke-width: 2; }
+.slot       { fill: #9aa3b2; opacity: .55; }
+.buzzer     { fill: #111; stroke: #555; stroke-width: 3; }
+.buzzer-hole{ fill: #333; }
+.battery    { fill: #b8b1a2; stroke: #8a8475; stroke-width: 2; }
+.battery + .title, .battery ~ .tiny { fill: #1a1a1a; }
+.underside  { fill: none; stroke: #2f7a4a; stroke-width: 2; stroke-dasharray: 5 4; }
+.pad        { fill: #d4a64a; }
+
+text        { fill: var(--text); font-size: 13px; }
+.title      { font-weight: 600; font-size: 14px; }
+.tiny       { fill: var(--muted); font-size: 11px; }
+.free       { fill: #5c6474; font-size: 10px; font-style: italic; }
+.pins circle{ fill: #d4a64a; stroke: #0008; stroke-width: 1; }
+.pins text  { font-family: ui-monospace, monospace; font-size: 12px; }
+
+.w { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; cursor: pointer; transition: opacity .15s, stroke-width .15s; }
+.cs   { --c: #b07cff; }
+.gnd  { --c: #8d8d8d; }
+.v33  { --c: #ff4d4d; }
+.mosi { --c: #3ecf6e; }
+.miso { --c: #3d9bff; }
+.sck  { --c: #f5d33b; }
+.bzp  { --c: #ff9a3c; }
+.bzn  { --c: #35d0c8; }
+.batp { --c: #e03030; }
+.batn { --c: #222; }
+.w { stroke: var(--c); }
+.batn.w { stroke: #000; filter: drop-shadow(0 0 1px #888); }
+
+.wires.dim .w           { opacity: .15; }
+.wires.dim .w.on        { opacity: 1; stroke-width: 8; }
+
+table { width: 100%; margin-top: 20px; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: block; overflow-x: auto; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td:last-child { white-space: normal; color: var(--muted); }
+th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+tbody tr { cursor: pointer; }
+tbody tr:hover, tbody tr.on { background: #222734; }
+.sw { display: inline-block; width: 22px; height: 6px; border-radius: 3px; background: var(--c); vertical-align: middle; }
+.sw.batn { background: #000; outline: 1px solid #666; }
+
+.foot { margin-top: 14px; color: var(--muted); }
+.w:not(.batn) { filter: drop-shadow(0 0 2px #000) drop-shadow(0 0 1px #000); }

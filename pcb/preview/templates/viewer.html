@@ -1,0 +1,30 @@
+<!-- templates - Developed by acidvegas in HTML (https://github.com/acidvegas) -->
+<!-- viewer.html -->
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DIY Omi 3D</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<script type="importmap">
+	{ "imports": { "three": "{{ url_for('static', filename='three/build/three.module.js') }}", "three/addons/": "{{ url_for('static', filename='three/examples/jsm/') }}" } }
+	</script>
+</head>
+<body class="viewer">
+	<div id="view"><p id="status">Loading 3D model…</p></div>
+	<div class="controls">
+		<button data-mode="case">Case</button>
+		<button data-mode="cutaway">Cutaway</button>
+		<button data-mode="exploded">Exploded</button>
+		<button data-mode="board">Board only</button>
+		<button data-view="top">Top</button>
+		<button data-view="bottom">Bottom</button>
+		<label><input type="checkbox" id="sizes" checked> size compare</label>
+		<label><input type="checkbox" id="labels" checked> labels</label>
+		<label><input type="checkbox" id="led"> LED on</label>
+	</div>
+	<script type="module" src="{{ url_for('static', filename='viewer.js') }}"></script>
+</body>
+</html>

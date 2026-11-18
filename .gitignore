@@ -1,0 +1,20 @@
+# Freerouting jar and bundled Java runtime
+tools/
+
+# Logs and caches
+*.log
+__pycache__/
+
+# KiCad local state and backups
+*.kicad_prl
+*-backups/
+fp-info-cache
+\#auto_saved_files\#
+
+# Autorouter exchange files (rewritten on every route)
+pcb/omi.dsn
+pcb/omi.ses
+
+# Vendor datasheets (copyrighted, fetch from LCSC)
+datasheets/
+pcb/datasheets/
