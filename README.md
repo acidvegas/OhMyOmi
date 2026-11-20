@@ -77,7 +77,3 @@ python3 summary.py                         # prices, stock and cost for the prev
 
 - `pcb/preview/app.py` serves the board preview *(layers, cost, parts, 3D view at `/3d`)* on port 20005
 - `app.py` serves the original dev-board wiring preview on port 20004
-
-## License
-
-ISC, see [LICENSE](LICENSE).
